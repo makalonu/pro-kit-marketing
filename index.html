@@ -295,14 +295,24 @@
                 let caption = parts[0].trim();
                 let hashtags = parts.length > 1 ? parts[1].trim() : "No hashtags returned. Try again.";
 
-                // Final display using a clean, separate structure
+                // Final display using a clean, separate, STACKED structure
                 contentOutput.innerHTML = `
-                    <div class="w-full">
-                        <p class="font-semibold text-gray-900 mb-2">Social Caption:</p>
-                        <div class="p-3 bg-white rounded-lg border border-gray-200 mb-4 whitespace-pre-wrap">${caption}</div>
+                    <div class="w-full space-y-4">
+                        <!-- Caption Block (Top) -->
+                        <div>
+                            <p class="font-semibold text-gray-900 mb-2">✅ Generated Caption:</p>
+                            <div class="p-4 bg-white rounded-xl border border-trades-blue/50 shadow-md whitespace-pre-wrap text-base text-gray-800">
+                                ${caption}
+                            </div>
+                        </div>
                         
-                        <p class="font-semibold text-gray-900 mb-1">Hashtags:</p>
-                        <div class="p-3 bg-white rounded-lg border border-gray-200 text-trades-blue font-mono text-sm break-all">${hashtags}</div>
+                        <!-- Hashtag Block (Bottom) -->
+                        <div>
+                            <p class="font-semibold text-gray-900 mb-2 mt-4">#️⃣ Generated Hashtags:</p>
+                            <div class="p-4 bg-white rounded-xl border border-trades-blue/50 shadow-md text-trades-blue font-mono text-sm break-all">
+                                ${hashtags}
+                            </div>
+                        </div>
                     </div>
                 `;
 
